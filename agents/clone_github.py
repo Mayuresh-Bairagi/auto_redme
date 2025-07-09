@@ -2,6 +2,7 @@ import git
 import os
 import shutil
 
+
 class CloneGitHubRepo:
     def __init__(self, clone_dir: str = "cloned_repos"):
         self.clone_dir = clone_dir
