@@ -1,0 +1,12 @@
+langchain[groq]
+faiss-cpu
+groq
+PyPDF2
+langchain
+streamlit
+langchain_community
+python-dotenv
+google-generativeai
+pathlib
+google-search-results
+GitPython
