@@ -73,11 +73,15 @@ class ReadmeGenerator:
             raise HTTPException(status_code=500, detail=f"Error generating README: {str(e)}")
 
     def write_readme(self):
+        file_path = "README.md"
+        if os.path.exists(file_path):
+            os.remove(file_path)
         try:
             readme_content = self.generate_readme()
-            with open("README.md", "w", encoding="utf-8") as f:
+            with open(file_path, "w", encoding="utf-8") as f:
                 f.write(readme_content)
             print("README.md file generated successfully.")
             self.clone_repo.delete_clone()
+            return file_path
         except Exception as e:
             raise HTTPException(status_code=500, detail=f"Error writing README file: {str(e)}")
