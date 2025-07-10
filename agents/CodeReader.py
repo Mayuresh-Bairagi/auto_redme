@@ -63,7 +63,13 @@ class CodeReader:
             ])
             response = prompt | llm
             return response.invoke({"code": code}).content
-
         except Exception as e:
             print(f"Error summarizing code: {e}")
             return "Error summarizing code."
+        
+    def repoAnalysis(self):
+        try:
+            return self.analysis
+        except Exception as e:
+            print(f"Error retrieving repo analysis: {e}")
+            return {}
